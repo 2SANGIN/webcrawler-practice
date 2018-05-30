@@ -47,7 +47,8 @@ driver.implicitly_wait(10)
 # 무조건 대기 -> 지정한 시간만큼 무조건 대기 -> time.sleep() : 디도스 방어 솔루션을 대처하기 위함
 
 # 더보기 눌러서 게시판 진입
-driver.find_element_by_css_selector('.oTravelBox>.boxList>.moreBtnWrap>.moreBtn').click()
+driver.find_element_by_css_selector(
+    'body > div.container > div > div > div.panelZone > div.oTravelBox > ul > li.moreBtnWrap > button').click()
 
 # 게시판에서 데이터를 가져올 때
 # 데이터가 많으면 세션 관리
@@ -113,7 +114,6 @@ for tour in tour_list:
         print(type(data), len(data))
 
         # DB 저장
-
 
 # 종료
 driver.close()
